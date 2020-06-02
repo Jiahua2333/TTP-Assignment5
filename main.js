@@ -105,7 +105,7 @@ clearAll.addEventListener('click', (event) => {
     }
 });
 
-table.addEventListener('click', (event) => { 
+table.addEventListener('mouseover', (event) => { 
 
     let row = document.getElementsByClassName('row');
     let rlen = row.length;
@@ -113,8 +113,6 @@ table.addEventListener('click', (event) => {
         let cells = row[i].children;
         for(let j = 0; j < cells.length; j++){
             cells[j].addEventListener('mouseover', (event) =>{
-                cells[j].style.backgroundColor = colors.value;
-            });
         }
     }
 });
