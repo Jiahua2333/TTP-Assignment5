@@ -6,9 +6,11 @@ const fillAllUncolored = document.getElementById('fillAllUncolored');
 const fillAll = document.getElementById('fillAll');
 const clearAll = document.getElementById('clearAll');
 const table = document.getElementById("table").firstElementChild;
+const colors = document.getElementById('colorSelector');
 
 let rows = document.getElementsByClassName('row').length;
 let cols = document.getElementsByClassName('cell').length/rows;
+//let cells = document.getElementsByClassName('cell');
 
 addRow.addEventListener('click', (event) => {
     let row = document.createElement("tr");
@@ -20,10 +22,12 @@ addRow.addEventListener('click', (event) => {
         cell.classList.add("cell");
         row.appendChild(cell);
     }
+    //cells = document.getElementsByClassName('cell');
 });
 
 removeRow.addEventListener('click', (event) => {
     table.removeChild(table.lastElementChild);
+    //cells = document.getElementsByClassName('cell');
     rows--;
 });
 
@@ -37,6 +41,7 @@ addColumn.addEventListener('click', (event) => {
         cell.classList.add("cell");
         tr[i].appendChild(cell);
     }
+    //cells = document.getElementsByClassName('cell');
 });
 
 removeColumn.addEventListener('click', (event) => {
@@ -45,4 +50,19 @@ removeColumn.addEventListener('click', (event) => {
     for (let i = 0; i < tr.length; i++) {
         tr[i].removeChild(tr[i].lastChild);
     }
+    //cells = document.getElementsByClassName('cell');
 });
+
+function tableCellFill(){
+    let row = document.getElementsByClassName('row');
+    let rlen = row.length;
+    for(let i = 0; i < rlen; i++){
+        let cells = row[i].children;
+        for(let j = 0; j < cells.length; j++){
+            cells[j].addEventListener('click', (event) =>{
+                cells[j].style.backgroundColor = colors.value;
+            });
+        }
+    }
+}
+tableCellFill();
