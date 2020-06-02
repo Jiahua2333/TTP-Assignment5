@@ -83,3 +83,16 @@ fillAllUncolored.addEventListener('click', (event) => {
     }
 });
 
+fillAll.addEventListener('click', (event) => {
+    let row = document.getElementsByClassName('row');
+    let rlen = row.length;
+    for(let i = 0; i < rlen; i++){
+        let cells = row[i].children;
+        for(let j = 0; j < cells.length; j++){
+             cells[j].style.backgroundColor = colors.value;
+        }
+    }
+});
+
+
+
