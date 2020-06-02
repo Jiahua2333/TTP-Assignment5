@@ -7,7 +7,7 @@ const fillAll = document.getElementById('fillAll');
 const clearAll = document.getElementById('clearAll');
 const table = document.getElementById("table");
 
-let cols = 5, rows = 0;
+let cols = 5, rows = 5;
 
 addRow.addEventListener('click', (event) => {
     let row = document.createElement("tr");
@@ -23,4 +23,6 @@ addRow.addEventListener('click', (event) => {
 
 removeRow.addEventListener('click', (event) => {
     table.removeChild(table.lastElementChild);
+    row--;
 });
+
