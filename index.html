@@ -1,25 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Document</title>
-</head>
-<body>
-    <div class="header">
-    </div>
-    <section id="container">
-        <ul>
-            <li class="first">one</li>
-            <li class="second">two</li>
-            <li class="third">three</li>
-        </ul>
-        <ol>
-            <li class="first">one</li>
-            <li class="second">two</li>
-            <li class="third">three</li>
-        </ol>
-    </section>
-    <div class="footer">
-    </div>
-</body>
+    <head>
+        <meta charset="UTF-8" />
+        <link rel="stylesheet" href="./style.css">
+        <title>Assignment #5</title>
+    </head>
+    <body>
+        
+
+        <div id="addRow">
+            <button>Add Row</button>
+        </div>
+        <div id="removeRow">
+            <button>Remove Row</button>
+        </div>
+        <div id="addColumn">
+            <button>Add Column</button>
+        </div>
+        <div id="removeColumn">
+            <button>Remove Column</button>
+        </div>
+        <div id="fillAllUncolored">
+            <button>Fill all uncolored</button>
+        </div>
+        <div id="fillAll">
+            <button>Fill all</button>
+        </div>
+        <div id="clearAll">
+            <button>Clear all</button>
+        </div>
+
+        <label for="Color">Choose a color:</label>
+        <select name="colors" id="colorSelector">
+            <option value="">--Select A Color</option>
+            <option id="red" value="red">Red</option>
+            <option id="blue" value="blue">Blue</option>
+            <option id="green" value="green">Green</option>
+            <option id="yellow" value="yellow">Yellow</option>
+        </select>
+
+        <table id="table">
+        </table>
+        
+        <script src="./main.js"></script>
+    </body>
 </html>
