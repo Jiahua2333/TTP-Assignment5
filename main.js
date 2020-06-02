@@ -5,9 +5,10 @@ const removeColumn = document.getElementById('removeColumn');
 const fillAllUncolored = document.getElementById('fillAllUncolored');
 const fillAll = document.getElementById('fillAll');
 const clearAll = document.getElementById('clearAll');
-const table = document.getElementById("table");
+const table = document.getElementById("table").firstElementChild;
 
-let cols = 5, rows = 5;
+let rows = document.getElementsByClassName('row').length;
+let cols = document.getElementsByClassName('cell').length/rows;
 
 addRow.addEventListener('click', (event) => {
     let row = document.createElement("tr");
@@ -24,7 +25,6 @@ addRow.addEventListener('click', (event) => {
 removeRow.addEventListener('click', (event) => {
     table.removeChild(table.lastElementChild);
     rows--;
-    if(rows === 0) rows = 1;
 });
 
 addColumn.addEventListener('click', (event) => {
@@ -39,11 +39,10 @@ addColumn.addEventListener('click', (event) => {
     }
 });
 
-// removeColumn.addEventListener('click', (event) => {
-//     cols--;
-//     let tr = Array.from(document.getElementsByClassName("row"));
-//     for (let i = 0; i < tr.length; i++) {
-//         tr[i].removeChild(tr[i].lastChild);
-//     }
-//     if(cols === 0) cols = 1;
-// });
+removeColumn.addEventListener('click', (event) => {
+    cols--;
+    let tr = Array.from(document.getElementsByClassName("row"));
+    for (let i = 0; i < tr.length; i++) {
+        tr[i].removeChild(tr[i].lastChild);
+    }
+});
