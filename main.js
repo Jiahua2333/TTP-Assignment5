@@ -20,3 +20,7 @@ addRow.addEventListener('click', (event) => {
         row.appendChild(cell);
     }
 });
+
+removeRow.addEventListener('click', (event) => {
+    table.removeChild(table.lastElementChild);
+});
