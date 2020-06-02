@@ -22,6 +22,7 @@ addRow.addEventListener('click', (event) => {
         cell.classList.add("cell");
         row.appendChild(cell);
     }
+    tableCellFill();
     //cells = document.getElementsByClassName('cell');
 });
 
@@ -29,6 +30,7 @@ removeRow.addEventListener('click', (event) => {
     table.removeChild(table.lastElementChild);
     //cells = document.getElementsByClassName('cell');
     rows--;
+    tableCellFill();
 });
 
 addColumn.addEventListener('click', (event) => {
@@ -41,6 +43,7 @@ addColumn.addEventListener('click', (event) => {
         cell.classList.add("cell");
         tr[i].appendChild(cell);
     }
+    tableCellFill();
     //cells = document.getElementsByClassName('cell');
 });
 
@@ -50,6 +53,7 @@ removeColumn.addEventListener('click', (event) => {
     for (let i = 0; i < tr.length; i++) {
         tr[i].removeChild(tr[i].lastChild);
     }
+    tableCellFill();
     //cells = document.getElementsByClassName('cell');
 });
 
@@ -66,3 +70,16 @@ function tableCellFill(){
     }
 }
 tableCellFill();
+
+fillAllUncolored.addEventListener('click', (event) => {
+    let row = document.getElementsByClassName('row');
+    let rlen = row.length;
+    for(let i = 0; i < rlen; i++){
+        let cells = row[i].children;
+        for(let j = 0; j < cells.length; j++){
+            if(cells[j].style.backgroundColor === '') 
+                cells[j].style.backgroundColor = colors.value;
+        }
+    }
+});
+
