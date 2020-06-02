@@ -23,7 +23,8 @@ addRow.addEventListener('click', (event) => {
 
 removeRow.addEventListener('click', (event) => {
     table.removeChild(table.lastElementChild);
-    row--;
+    rows--;
+    if(rows === 0) rows = 1;
 });
 
 addColumn.addEventListener('click', (event) => {
@@ -37,3 +38,12 @@ addColumn.addEventListener('click', (event) => {
         tr[i].appendChild(cell);
     }
 });
+
+// removeColumn.addEventListener('click', (event) => {
+//     cols--;
+//     let tr = Array.from(document.getElementsByClassName("row"));
+//     for (let i = 0; i < tr.length; i++) {
+//         tr[i].removeChild(tr[i].lastChild);
+//     }
+//     if(cols === 0) cols = 1;
+// });
